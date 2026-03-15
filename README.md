@@ -1,35 +1,36 @@
-# Amazon WBR Automation
+# Amazon FLEX Data Tool
 
-Python automation tool for preparing weekly business reporting outputs from multiple data sources.
+Python data-processing tool for cleaning large product files and generating task-specific workbooks and upload-ready outputs.
 
 ## Overview
-This project automates a recurring reporting workflow that was previously prepared manually from several files.  
-The script collects data, applies the required transformations, and generates output ready to be used in management reporting.
+This project streamlines the workflow of preparing product attribute correction files from raw source exports.
 
 ## Business problem
-Weekly reporting required manual work across multiple Excel sources.  
-The process was repetitive, time-consuming, and dependent on manual calculations such as averages and aggregations.
+Raw source files contained many unnecessary columns and were difficult to use efficiently in daily operations.  
+Preparing task-specific files and final upload files manually was time-consuming and error-prone.
 
 ## Solution
-I built a lightweight ETL-style workflow in Python that:
-- reads data from multiple source files,
-- transforms and aggregates the data,
-- prepares final output in a format ready for reporting.
+I built a Python-based workflow tool that:
+- cleans raw product exports,
+- keeps only the relevant attributes,
+- creates task-specific worksheets,
+- supports a simple READY-based workflow,
+- generates upload-ready output files.
 
 ## Tech stack
 - Python
 - pandas
-- Excel-based input/output
+- openpyxl
+- Excel-based workflow
 
 ## Workflow
-1. Load source files
-2. Clean and filter the data
-3. Apply required calculations (for example averages or sums)
-4. Generate output for weekly reporting
+1. Load raw source file
+2. Mark completed records with READY = yes
+3. Generate final files ready for upload
 
 ## Result
-The tool reduced manual work in weekly report preparation and made the process faster and more repeatable.
+The tool improved structure, reduced manual file preparation, and made the overall workflow faster and easier to manage.
 
 ## Notes
-This repository contains an anonymized version of the project.  
-Any business-sensitive names, files, and internal identifiers were removed or generalized.
+This repository is a generalized version of the original internal tool.  
+Sensitive business-specific details were anonymized.
