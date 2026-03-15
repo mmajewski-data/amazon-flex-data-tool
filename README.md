@@ -1,36 +1,69 @@
 # Amazon FLEX Data Tool
 
-Python data-processing tool for cleaning large product files and generating task-specific workbooks and upload-ready outputs.
+Python data-processing tool for preparing structured product attribute datasets from raw source exports.
 
 ## Overview
-This project streamlines the workflow of preparing product attribute correction files from raw source exports.
 
-## Business problem
-Raw source files contained many unnecessary columns and were difficult to use efficiently in daily operations.  
-Preparing task-specific files and final upload files manually was time-consuming and error-prone.
+This project streamlines the preparation of product attribute correction files from raw data exports.
+
+The tool cleans input files, filters relevant attributes, and generates structured worksheets used for attribute improvement workflows.
+
+---
+
+## Business Problem
+
+Raw product export files contained a large number of columns and attributes that were not relevant for daily work.
+
+Preparing task-specific datasets and final upload files manually required significant time and introduced the risk of formatting errors.
+
+---
 
 ## Solution
-I built a Python-based workflow tool that:
-- cleans raw product exports,
-- keeps only the relevant attributes,
-- creates task-specific worksheets,
-- supports a simple READY-based workflow,
-- generates upload-ready output files.
 
-## Tech stack
+A Python-based data processing tool that prepares structured datasets and automates the creation of upload-ready files.
+
+The script simplifies the workflow by keeping only relevant attributes and generating task-specific worksheets.
+
+---
+
+## Tech Stack
+
 - Python
 - pandas
 - openpyxl
-- Excel-based workflow
+- Excel-based workflows
 
-## Workflow
-1. Load raw source file
-2. Mark completed records with READY = yes
-3. Generate final files ready for upload
+---
+
+## Usage
+
+1. Export raw product data from the source system.
+2. Place the raw file in the input directory.
+3. Run the script.
+4. The script generates processed worksheets used for attribute correction tasks.
+5. After completing updates, run the generation script to produce upload-ready files.
+
+---
+
+## Processing Logic
+
+Internally the tool performs the following steps:
+
+1. Load the raw product dataset.
+2. Remove unnecessary columns and attributes.
+3. Keep required and supporting fields used during attribute correction.
+4. Create task-specific worksheets.
+5. Generate structured output files ready for system upload.
+
+---
 
 ## Result
-The tool improved structure, reduced manual file preparation, and made the overall workflow faster and easier to manage.
+
+The tool reduced the complexity of working with large product datasets and helped standardize the workflow used by the team.
+
+---
 
 ## Notes
-This repository is a generalized version of the original internal tool.  
-Sensitive business-specific details were anonymized.
+
+This repository contains a generalized version of the internal tool.  
+Business-specific identifiers and confidential data have been removed.
